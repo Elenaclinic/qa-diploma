@@ -9,7 +9,7 @@ services:
       - MYSQL_DATABASE=app
       - MYSQL_USER=app
       - MYSQL_PASSWORD=pass
-  postgressqldb:
+  postgres:
     image: postgres:12-alpine
     ports:
       - '5432:5432'
@@ -17,3 +17,7 @@ services:
       - POSTGRES_DB=app
       - POSTGRES_USER=app
       - POSTGRES_PASSWORD=pass
+
+
+
+
