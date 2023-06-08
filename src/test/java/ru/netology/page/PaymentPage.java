@@ -5,8 +5,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
 
-import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
@@ -48,7 +46,7 @@ public class PaymentPage {
     }
 
     public void errorRestricted() {
-        errorRestricted.shouldBe(visible, Duration.ofSeconds(15));
+        errorRestricted.shouldBe(visible);
     }
 
     public void clickButtonNext() {
@@ -56,7 +54,7 @@ public class PaymentPage {
     }
 
     public void confirmationOfBank() {
-        success.shouldBe(visible, Duration.ofSeconds(15));
+        success.shouldBe(visible);
     }
 
     public void insertPaymentCardIfEmptyCardNumber(DataHelper.CardInfo cardInfo) {
