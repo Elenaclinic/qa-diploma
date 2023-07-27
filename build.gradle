@@ -29,7 +29,7 @@ allure {
 
         implementation 'org.projectlombok:lombok:1.18.24'
         testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
-        testImplementation 'mysql:mysql-connector-java:8.0.30'
+        testImplementation 'mysql:mysql-connector-java:8.0'
         testImplementation 'org.postgresql:postgresql:42.5.1'
         testImplementation 'commons-dbutils:commons-dbutils:1.7'
         testImplementation 'com.github.javafaker:javafaker:1.0.2'
@@ -40,7 +40,7 @@ allure {
 
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-        testImplementation 'mysql:mysql-connector-java:8.0.18'
+        testImplementation 'mysql:mysql-connector-java:8.0'
         testImplementation 'io.qameta.allure:allure-rest-assured:2.13.0'
         testImplementation 'com.google.code.gson:gson:2.8.6'
         implementation 'com.github.javafaker:javafaker:1.0.2'
