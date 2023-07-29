@@ -42,4 +42,5 @@ out/
 *.rar
 
 !gradle/wrapper/gradle-wrapper.jar
+!artifacts/aqa-shop.jar
 /data
