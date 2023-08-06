@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$$;
 public class StartPage {
 
     private SelenideElement heading = $$("h2").find(text("Путешествие дня"));
-    private SelenideElement buyButton = $$("button").find(exactText("Купить"));
+    private SelenideElement paymentButton = $$("button").find(exactText("Купить"));
     private SelenideElement creditButton = $$("button").find(exactText("Купить в кредит"));
 
     public StartPage() {
@@ -16,7 +16,7 @@ public class StartPage {
     }
 
     public PaymentPage paymentPage() {
-        buyButton.click();
+        paymentButton.click();
         return new PaymentPage();
     }
 
@@ -25,4 +25,7 @@ public class StartPage {
         return new CreditPage();
     }
 }
+
+
+
 

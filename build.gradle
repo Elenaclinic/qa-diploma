@@ -14,46 +14,40 @@ compileTestJava.options.encoding = "UTF-8"
 
 allure {
     version = '2.17.2'
-    //Если используется JUnit5, то добавляется:
-    useJUnit5 { version = '2.17.2' }
 
-}
+    useJUnit5 {
+        version = '2.17.2' }
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+
+        compileOnly 'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+        testImplementation 'com.codeborne:selenide:6.12.2'
+        testImplementation 'com.github.javafaker:javafaker:1.0.2'
+        testImplementation 'org.slf4j:slf4j-simple:1.7.33'
+        testImplementation 'mysql:mysql-connector-java:8.0.28'
+        testImplementation 'org.postgresql:postgresql:42.3.3'
+        testImplementation 'commons-dbutils:commons-dbutils:1.7'
+        testImplementation 'io.qameta.allure:allure-selenide:2.21.0'
+        testImplementation 'io.rest-assured:rest-assured:4.3.0'
+        testCompileOnly 'org.projectlombok:lombok:1.18.24'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    }
 
 
-repositories {
-    mavenCentral()
-    jcenter()
-}
-
-dependencies {
-
-    implementation 'org.projectlombok:lombok:1.18.24'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
-    testImplementation 'mysql:mysql-connector-java:8.0'
-    testImplementation 'org.postgresql:postgresql:42.5.1'
-    testImplementation 'commons-dbutils:commons-dbutils:1.7'
-    testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'io.qameta.allure:allure-selenide:2.20.0'
-    testImplementation 'io.rest-assured:rest-assured:5.3.0'
-    testImplementation 'com.codeborne:selenide:5.3.1'
-
-
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    testImplementation 'mysql:mysql-connector-java:8.0'
-    testImplementation 'io.qameta.allure:allure-rest-assured:2.13.0'
-    testImplementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.github.javafaker:javafaker:1.0.2'
-
-}
-
-test {
-    useJUnitPlatform()
-
-    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-    systemProperty 'db.url', System.getProperty('db.url')
-    systemProperty 'db.user', System.getProperty('db.user', "app")
-    systemProperty 'db.password', System.getProperty('db.password', "pass")
-    systemProperty 'sut.url', System.getProperty('sut.url', 'http://localhost:8080')
-
+    test {
+        useJUnitPlatform()
+        systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+        systemProperty 'db.url', System.getProperty('db.url')
+        systemProperty 'db.user', System.getProperty('db.user', "app")
+        systemProperty 'db.password', System.getProperty('db.password', "pass")
+        systemProperty 'sut.url', System.getProperty('sut.url', 'http://localhost:8080')
+    }
 }
