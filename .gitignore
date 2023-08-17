@@ -44,3 +44,4 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !artifacts/aqa-shop.jar
 /data
+node_modules
