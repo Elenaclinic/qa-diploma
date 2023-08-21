@@ -35,7 +35,7 @@ public class CreditTest {
         closeWindow();
     }
 
-    // Кредитная карта должна быть одобрена
+    // Кредитная карта одобрена
     @Test
     @DisplayName("The credit card must be approved")
     void shouldSuccessTransactionWithCreditCard() {
@@ -45,7 +45,7 @@ public class CreditTest {
         creditPage.checkApprovedMsgFromBank();
     }
 
-    // Кредитная карта должна быть отклонена
+    // Кредитная карта отклонена
     @Test
     @DisplayName("The credit card must be declined")
     void shouldUnSuccessTransactionWithCreditCard() {
